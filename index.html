@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>NOIR — Finance AI</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-mark">N</div>
+        <div><strong>NOIR</strong><span>FINANCE AI</span></div>
+      </div>
+
+      <div class="side-label">Workspace</div>
+      <nav id="nav">
+        <button class="nav-item active" data-page="overview"><span>⌂</span> Visão geral</button>
+        <button class="nav-item" data-page="transactions"><span>↕</span> Lançamentos</button>
+        <button class="nav-item" data-page="accounts"><span>◉</span> Bancos & contas</button>
+        <button class="nav-item" data-page="cards"><span>▣</span> Cartões</button>
+        <button class="nav-item" data-page="budgets"><span>◌</span> Orçamentos</button>
+        <button class="nav-item" data-page="goals"><span>◇</span> Metas</button>
+        <button class="nav-item" data-page="recurring"><span>↻</span> Recorrentes</button>
+        <button class="nav-item" data-page="reports"><span>▤</span> Relatórios</button>
+      </nav>
+
+      <div class="sidebar-bottom">
+        <button class="nav-item" data-page="ai"><span>✦</span> Finance AI</button>
+        <button class="nav-item" data-page="settings"><span>⚙</span> Configurações</button>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <div>
+          <div class="eyebrow" id="pageEyebrow">PERSONAL FINANCE</div>
+          <h1 id="pageTitle">Visão geral</h1>
+        </div>
+        <div class="top-actions">
+          <button class="icon-btn" id="hideBalances" title="Ocultar valores">◉</button>
+          <button class="ghost-btn" id="openAI">✦ Perguntar à IA</button>
+          <button class="primary-btn" id="newTransaction">+ Lançamento</button>
+        </div>
+      </header>
+
+      <section class="command-bar">
+        <div class="command-icon">✦</div>
+        <input id="commandInput" autocomplete="off" placeholder='Digite: "gastei 45 em alimentação no Nubank" ou "quanto gastei esse mês?"'>
+        <kbd>Enter</kbd>
+      </section>
+
+      <div id="page" class="page"></div>
+    </main>
+  </div>
+
+  <div class="modal-backdrop" id="modalBackdrop">
+    <div class="modal" id="modal"></div>
+  </div>
+
+  <div class="toast-wrap" id="toastWrap"></div>
+  <script src="app.js"></script>
+</body>
+</html>
